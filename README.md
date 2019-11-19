@@ -1,15 +1,14 @@
-## One Day Earthquake Information Platform
+## Nested menus application
 
-This is an earthquake today web application which was implemented by React hooks. Leverage on React Table and Leaflet.
+This is a nested menu web application which was implemented by React hooks.
 
-* User is able to visualize the earthquake happened locations on the interactive earth map. 
-* There is a table which provides user to view the dataset also able to do sorting, filtering and pagination.
+* User is able to navigate down in directory, util find out the desired data sources.
 
 ## Installation and Setup Instructions
 
 #### Example:  
 
-Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+Clone down this repository. You will need latest `node` and `npm` installed globally on your machine.  
 
 Installation:
 
@@ -27,33 +26,40 @@ To Run Test Suite:
 
 `npm test`
 
+## Technical Note
+* When user selects a sub menu, application will fire an rest request to fetch next layer data.
+* Application was implemented by recursion way for displaying nested menu structure.
+
 ## External Library
-* [React Table](https://www.npmjs.com/package/react-table)
-* [React Leaflet](https://react-leaflet.js.org/)
+* [React | Font Awesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react) for icons
+* [Prop Types](https://www.npmjs.com/package/prop-types) for strict type checking
+* [Lodash FP](https://www.npmjs.com/package/lodash-fp)
 
 ## Unit Test Library
 * [React Testing Library](https://github.com/testing-library/react-testing-library)
 
 ## Unit Coverage
 * PASS  src/App.test.js
-* PASS  src/Components/Table/Table.test.jsx
-* PASS  src/Components/Title/Title.test.jsx
+* PASS  src/components/Icon/Icon.test.jsx
+* PASS  src/components/Node/Node.test.jsx
+* PASS  src/components/Tree/Tree.test.jsx
 * PASS  src/util/helper.test.js
 
-Test Suites: 4 passed, 4 total
-Tests:       12 passed, 12 total
+Test Suites: 5 passed, 5 total
+Tests:       20 passed, 20 total
 Snapshots:   0 total
-Time:        2.956s, estimated 4s
+Time:        2.857s
 
-## Dataset source
-[earthquake.usgs.gov](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp)
+## reference source
+[SAP Education Hana](https://education.hana.ondemand.com/education/pub/s4/index.html)
 
 ## TODO
 This is a very brief list of things that I would love to work on given more time:
-* Interaction between map and table (e.g. filtered data from table are highlighted on map)
-* Implement real time update (monitoring)
+* Implement collapsible feature on menu
+* Improve UX (e.g. loading spinner right next to each folder when on click event happened)
+* Improve the algorithm / data structure
 * Increase unit test coverage
-* Custom some filters (e.g. slider for number column, dropdown for type)
+* Fix any edge case bugs
 
 ## Authors
 
