@@ -1,0 +1,16 @@
+.node {
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.node:hover {
+    color: #6495ED;
+}
+
+.node:active {
+    color: #0042b5;
+}
+
+.label {
+    font-weight: 600;
+}

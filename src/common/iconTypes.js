@@ -1,0 +1,9 @@
+export const GROUP = 'group';
+export const BOOK = 'book';
+export const SLIDE = 'slide';
+export const PROJECT = 'project';
+export const SPINNER = 'spinner';
+export const FOLDER_OPEN = 'folder_open';
+export const FOLDER = 'folder';
+export const CARET_RIGHT = 'caret_right';
+export const CARET_DOWN = 'caret_down';
