@@ -11,7 +11,7 @@ export const composeMultiRequestPayload = ({ assets }) => {
     return { request: assetList }
 };
 
-const transformSingleAsset = (asset) => {
+export const transformSingleAsset = (asset) => {
     const { uid, tclass, caption, assets } = asset;
     let requestInfo, isMulti;
 
@@ -26,9 +26,9 @@ const transformSingleAsset = (asset) => {
     return { uid, tclass, caption, requestInfo, isMulti };
 };
 
-const transformMultiAsset = (assets) => assets.map(asset => transformSingleAsset(asset));
+export const transformMultiAssets = (assets) => assets.map(asset => transformSingleAsset(asset));
 
-export const composeInitTreeData = ({uid, tclass, caption}, assets) => [{ uid, tclass, caption, assets: transformMultiAsset(assets) }];
+export const composeInitTreeData = ({uid, tclass, caption}, assets) => [{ uid, tclass, caption, assets: transformMultiAssets(assets) }];
 
 export const updateTree = (originalTree, uid, extraAsset) => {
     const mutatedTree = [...originalTree];
@@ -42,7 +42,7 @@ const addAsset = (tree, uid, extraAsset) => {
     tree.forEach(node => {
         if (node.uid === uid) {
             if (Array.isArray(extraAsset)) {
-                node.assets = transformMultiAsset(extraAsset);
+                node.assets = transformMultiAssets(extraAsset);
             } else {
                 node.assets = [transformSingleAsset(extraAsset)];
             }

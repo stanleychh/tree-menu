@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from 'lodash/fp';
 import { Icon } from '../Icon';
 import { GROUP, BOOK, SLIDE, PROJECT } from '../../common/iconTypes.js';
 import styles from './Node.module.css';
@@ -32,10 +33,13 @@ Node.propTypes = {
     title: PropTypes.string,
     tclass: PropTypes.string,
     uid: PropTypes.string.isRequired,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    assets: PropTypes.array
 };
 
 Node.defaultProps = {
     title: '',
     tclass: '',
+    onClick: noop,
+    assets: null
 };
